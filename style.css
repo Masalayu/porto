@@ -1,0 +1,223 @@
+:root {
+    --primary-bg: #333;
+    --secondary-bg: #444;
+    --text-color: #fff;
+    --accent-color: #f0f0f0;
+    --hover-color: #ddd;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--secondary-bg);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.profile-section, .form-section, .quote-section, .gallery-section {
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.profile-photo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--accent-color);
+}
+
+.profile-info {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.profile-info th, .profile-info td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.profile-info th {
+    background-color: var(--secondary-bg);
+    width: 30%;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+}
+
+button {
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+.quote-section {
+    text-align: center;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 1rem;
+    border-left: 5px solid var(--accent-color);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+figure:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    color: var(--text-color);
+    padding: 0.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+figure:hover figcaption {
+    transform: translateY(0);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: var(--secondary-bg);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-info th, .profile-info td {
+        display: block;
+        width: 100%;
+    }
+    
+    .profile-info th {
+        text-align: center;
+        border-bottom: none;
+    }
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+#scrollToTopBtn:hover {
+    background-color: var(--hover-color);
+}
